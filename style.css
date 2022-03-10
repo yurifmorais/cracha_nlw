@@ -1,0 +1,76 @@
+* {/*isso vai ser aplicado para toda a pagina*/
+  margin: 0;
+}
+html,
+body {
+  --black: hsl(240, 6%, 13%);
+  --gray:hsl(240, 9%, 89%) /*declarei uma variavel. siginifca que todos os grey vai ser nesse tom em todo css agora*/
+  height: 100%;
+  font-family: 'Roboto', sans-serif; /*se n achar uma,vai pra outra*/
+  -webkit-font-smoothing: antialiased; /* configuracao da fonte no navegador*/
+}
+body {
+  display: grid;
+  place-items: center;
+}
+main {
+  background: url(images/background.svg); 
+  width: 375px;
+  height: 812px;
+}
+.container {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  /* color: var(--gray); */
+  color: aliceblue;
+}
+.avatar{
+  width: 10rem;
+  margin: 11.5rem auto 0;
+  position: relative;
+}
+.avatar span{ /*ele vai ir no avatar e procurar quem ta dentro do span e ai vai aplicar as coisas abaixo*/
+  position: absolute;
+  top: -15px;
+  z-index: 1; /*para enviar a imagem pra tras*/
+}
+
+.avatar > img{ /*para pegar somente as imagens no primeiro nivel dentro da div avatar,  ou seja, somente as que nao estao dentro de outros elementos. ex": dentro do span ja e 2 nivel*/
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover; /*para a imagem nao ficar esticada*/
+
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); /*para deixar a imagem em hexagono*/
+}
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+a {
+  color: var(--gray);
+  text-decoration: none;
+
+  margin-top: 0.25rem;
+
+  display: flex;
+  gap: 0.75rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+p{
+  margin-top: 2rem;
+}
+ul{
+  margin-top: 4rem;
+  list-style: none; /*tira as bolinhas da lista*/
+  padding: 0;
+
+  display: flex; /*para deixar os elementos da lista um do lado do outro*/
+  gap: 0.5rem;
+  justify-content: center;/*para centralizar*/
+}
